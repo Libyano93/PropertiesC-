@@ -7,6 +7,7 @@ namespace PropertiesCSharp
         static void Main(string[] args)
         {
             Console.ReadKey();
+            Console.ReadKey();
         }
     }
 }
