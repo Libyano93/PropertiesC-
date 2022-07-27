@@ -6,8 +6,56 @@ namespace PropertiesCSharp
     {
         static void Main(string[] args)
         {
-            Console.ReadKey();
+            Dollar dollar = new Dollar(1.99m);
+            dollar.Amount = 1.991m;//set
+            Console.WriteLine(dollar.Amount);//get
             Console.ReadKey();
         }
     }
+
+    public class Dollar
+    {
+        private decimal _amount;
+        public decimal Amount
+        {
+            get
+            {
+                return this._amount;
+            }
+            set
+            {
+                //Validation
+                this._amount = ProcessValue(value);
+
+                //if (value<=0)
+                //{
+                //    this._amount = 0;
+                //}
+                //else
+                //{
+                //    this._amount = value;
+                //}
+
+            }
+        } //Baking Feild
+
+        public Dollar(decimal amount)
+        {
+            this._amount = ProcessValue(amount);
+
+            //if (amount<=0)
+            //{
+            //    this._amount = 0;
+            //}
+            //else
+            //{
+            //    this._amount = amount;
+            //}
+
+        }
+
+        private decimal ProcessValue(decimal value) => value <= 0 ? 0 : Math.Round(value, 2); //Method Validation
+    }
+
+
 }
