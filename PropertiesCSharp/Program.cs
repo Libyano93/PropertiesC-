@@ -7,7 +7,7 @@ namespace PropertiesCSharp
         static void Main(string[] args)
         {
             Dollar dollar = new Dollar(1.99m);
-            dollar.Amount = 1.991m;//set
+            dollar.SetAmount(1.99m);//set
             Console.WriteLine(dollar.Amount);//get
             Console.ReadKey();
         }
@@ -16,13 +16,13 @@ namespace PropertiesCSharp
     public class Dollar
     {
         private decimal _amount;
-        public decimal Amount
+        public decimal Amount//Baking Feild
         {
             get
             {
                 return this._amount;
             }
-            set
+          private  set
             {
                 //Validation
                 this._amount = ProcessValue(value);
@@ -37,7 +37,12 @@ namespace PropertiesCSharp
                 //}
 
             }
-        } //Baking Feild
+        } 
+
+        public void SetAmount(decimal value)
+        {
+            Amount = value;
+        }
 
         public Dollar(decimal amount)
         {
