@@ -6,7 +6,7 @@ namespace PropertiesCSharp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello Worldd!");
+            Console.ReadKey();
         }
     }
 }
