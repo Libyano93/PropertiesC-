@@ -9,6 +9,7 @@ namespace PropertiesCSharp
             Dollar dollar = new Dollar(1.99m);
             dollar.SetAmount(1.99m);//set
             Console.WriteLine(dollar.Amount);//get
+            Console.WriteLine(dollar.isZero);//get
             Console.ReadKey();
         }
     }
@@ -43,6 +44,9 @@ namespace PropertiesCSharp
         {
             Amount = value;
         }
+
+        public bool isZero => _amount == 0;
+        public decimal Conversionfactor { get; set; } = 1.99m;
 
         public Dollar(decimal amount)
         {
