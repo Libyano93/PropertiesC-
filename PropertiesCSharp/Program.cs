@@ -17,32 +17,34 @@ namespace PropertiesCSharp
     public class Dollar
     {
         private decimal _amount;
-        public decimal Amount//Baking Feild
-        {
-            get
-            {
-                return this._amount;
-            }
-          private  set
-            {
-                //Validation
-                this._amount = ProcessValue(value);
 
-                //if (value<=0)
-                //{
-                //    this._amount = 0;
-                //}
-                //else
-                //{
-                //    this._amount = value;
-                //}
+        public decimal Amount { get; set; }
+        //public decimal Amount//Baking Feild
+        //{
+        //    get
+        //    {
+        //        return this._amount;
+        //    }
+        //  private  set
+        //    {
+        //        //Validation
+        //        this._amount = ProcessValue(value);
 
-            }
-        } 
+        //        //if (value<=0)
+        //        //{
+        //        //    this._amount = 0;
+        //        //}
+        //        //else
+        //        //{
+        //        //    this._amount = value;
+        //        //}
+
+        //    }
+        //} 
 
         public void SetAmount(decimal value)
         {
-            Amount = value;
+            _amount = value;
         }
 
         public bool isZero => _amount == 0;
